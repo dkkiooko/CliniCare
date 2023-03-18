@@ -1,0 +1,6 @@
+create Doctor fname="Kawaki"
+create Doctor fname="John"
+all Doctor
+
+create Patient patient_id=0002 fname='dan' lname='kioko' birthyear=1997 sex='M' post_address='234-54545 Mombasa' phone_number=075645635 insurance_number=034534 city='Mombasa' county='Mombasa' subcity='Nyali' insurance_company='Mids' emergency_number=064452345 email='dan@gmail.com' emergency_email='danbro@gmail.com' emergency_fname='bro' emergency_lname='kioko' location='beach'
+all Patient
