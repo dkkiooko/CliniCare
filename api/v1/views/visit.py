@@ -66,7 +66,7 @@ def get_doctor_date(doctor_id, date):
     return jsonify(list_visits)
 
 @app_views.route('/visits/<doctor_id>/<patient_id>/', methods=['GET'], strict_slashes=False)
-def get_doctor_visit(doctor_id, patient_id):
+def get_doctor_visit_patient(doctor_id, patient_id):
     """ get all visits to a particular doctor"""
     list_visits = []
     visits = storage.all(Visit).values()

@@ -1,4 +1,6 @@
-
+# CliniCare - The Console
+The console is the first segment of CliniCare project. 
+The goal of CliniCare is to enable. A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 PHASE 1
 web static cards (Bek)
 	1. Landing page
@@ -15,23 +17,31 @@ models cards (Dan)
 tests	(both)
 	1. Add tests with each task
 
-PHASE 2
-web_flask (Bek)
+api (Dan)
+	/patients/
+	/patients/<date>/
+	/patients/<patient_id>/
+	/patients/<patient_id>/<date>/
+	/visits/
+	/visits/<date>/
+	/visits/<visit_id>/
+	/visits/<doctor_id>/
+	/visits/<patient_id>/
+	/visits/<doctor_id>/<date>/
+	/visits/<doctor_id>/<patient_id>/
+	/visits/<doctor_id>/<patient_id>/<date>/
+
+
+
+web_flask
 	1. Landing page
 	2. Reception page
 	3. client side Information viewing page
 	4. provider side Information viewing page
 
-api (Dan)
-	1. /api/admin/<admin_id>/
-		POST: Sends an authentication request with provider_id and password
-	2. /api/admin/<admin_id>/clients
-		GET: Return all the clients
-	3. /api/admin/<admin_id>/clients/<client_id>/
-		GET: Return all entries of specific client
-	4. /api/admin/<admin_id>/clients/<client_id>/<date>
-		GET: return all clients or 1 client by date or date range
-	5. /api/admin/<admin_id>/providers/<client_id>/
-		GET: Return all entries of specific provider
-	6. /api/admin/<admin_id>/providers/<client_id>/<date>
-		GET: return all providers or 1 provider by date or date range
+authentication
+	1. login pages
+	
+populating data
+	1. visit
+	2. 

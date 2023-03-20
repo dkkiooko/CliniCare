@@ -23,6 +23,7 @@ class Visit(BaseModel, Base):
         patient_gender = Column(Integer, nullable=False, default=0)
         phone_number = Column(Integer, nullable=False, default=0)
         price_charged = Column(Float, nullable=False, default=0)
+        sex = Column(String(10), nullable=False)
         city = Column(String(20), nullable=False)
         sub_city = Column(String(20), nullable=False)
         county = Column(String(20), nullable=False)
@@ -35,7 +36,7 @@ class Visit(BaseModel, Base):
         weight = Column(Float, nullable=False)
         respiratory_rate = Column(Float, nullable=False)
         temperature = Column(Float, nullable=False)
-        heent = Column(Float, nullable=False)
+        heent = Column(String(1024), nullable=False)
         genitourinary = Column(String(1024), nullable=False)
         lymphoglandular = Column(String(1024), nullable=False)
         integumentary = Column(String(1024), nullable=False)
@@ -71,6 +72,7 @@ class Visit(BaseModel, Base):
         blood_pressure = ''
         height = 0.0
         weight = 0.0
+        sex = ''
         respiratory_rate = 0.0
         temperature = 0.0
         heent = 0.0

@@ -12,7 +12,7 @@ class Patient(BaseModel, Base):
     """Representation of Patient """
     if models.storage_t == 'db':
         __tablename__ = 'patients'
-        patient_id = Column(Integer, nullable=False, primary_key=True)
+        patient_id = Column(String(60), nullable=False, primary_key=True)  # make sure unique per entry
         fname = Column(String(60), nullable=False)
         lname = Column(String(60), nullable=False)
         birthyear = Column(Date, nullable=False)
