@@ -48,8 +48,6 @@ class Visit(BaseModel, Base):
         lab_investigations = Column(String(1024), nullable=False)
         current_medication = Column(String(1024), nullable=False)
         diagnosis = Column(String(1024), nullable=False)
-        doctor = relationship("Doctor", backref="visits")
-        patient = relationship("Patient", backref="visits")
        
 
     else:

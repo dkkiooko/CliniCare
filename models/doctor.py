@@ -14,7 +14,7 @@ class Doctor(BaseModel, Base):
     """Representation of Place """
     if models.storage_t == 'db':
         __tablename__ = 'doctors'
-        doctor_id = Column(String(60), nullable=False)
+        doctor_id = Column(String(60), nullable=False, primary_key=True)
         fname = Column(String(60), nullable=False)
         lname = Column(String(128), nullable=False)
         office_number = Column(Integer, nullable=False)
