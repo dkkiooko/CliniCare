@@ -14,6 +14,7 @@ class Visit(BaseModel, Base):
     """Representation of a visit """
     if models.storage_t == 'db':
         __tablename__ = 'visits'
+        id = Column(String(60), primary_key=True)
         patient_id = Column(String(60), ForeignKey('patients.patient_id'), nullable=False)
         doctor_id = Column(String(60), ForeignKey('doctors.doctor_id'), nullable=False)
         doctor_name = Column(String(60), nullable=False)
@@ -48,7 +49,6 @@ class Visit(BaseModel, Base):
         lab_investigations = Column(String(1024), nullable=False)
         current_medication = Column(String(1024), nullable=False)
         diagnosis = Column(String(1024), nullable=False)
-       
 
     else:
         patient_id = ''

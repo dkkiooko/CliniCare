@@ -1,12 +1,19 @@
-#!/usr/bin/python3
-""" test .get() and .count() methods """
+from datetime import date, timedelta
 
-from models import storage
-from models.patient import Patient
+start_dt = date(2022, 6, 10)
+end_dt = date(2022, 6, 15)
 
+# difference between current and previous date
+delta = timedelta(days=1)
 
-print("All objects: {}".format(storage.count()))
-print("Patient objects: {}".format(storage.count(Patient)))
+# store the dates between two dates in a list
+dates = []
 
-first_patient_id = list(storage.all(Patient).values())[0].id
-print("first patient: {}".format(storage.get(Patient, first_patient_id)))
+while start_dt <= end_dt:
+    # add current date to list by converting  it to iso format
+    dates.append(start_dt.isoformat())
+    # increment start date by timedelta
+    start_dt += delta
+
+print('Dates between', start_dt, 'and', end_dt)
+print(min(dates))

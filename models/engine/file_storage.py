@@ -8,9 +8,10 @@ import models
 from models.doctor import Doctor
 from models.base_model import BaseModel
 from models.patient import Patient
+from models.visit import Visit
 from hashlib import md5
 
-classes = {"Doctor": Doctor, "Patient": Patient}
+classes = {"Doctor": Doctor, "Patient": Patient, "Visit": Visit}
 
 
 class FileStorage:
@@ -81,6 +82,22 @@ class FileStorage:
             if (value.id == id):
                 return value
 
+        return None
+
+    def get_patient_provider(self, cls, id):
+        """ 
+        Returns all patients visit history
+        """
+        if cls not in (Patient, Doctor):
+            return None
+        
+        all_visits = models.storage.all(Visit)
+        list_visits = []
+        for value in all_visits.values():
+            if (id == value.doctor_id) or (id == value.patient_id):
+                list_visits.append(value)
+        if len(list_visits) != 0:
+            return list_visits
         return None
 
     def count(self, cls=None):
