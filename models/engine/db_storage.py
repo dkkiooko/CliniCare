@@ -13,7 +13,7 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-classes = {"Doctor": Doctor, "Patient": Patient}
+classes = {"Doctor": Doctor, "Patient": Patient, "Visit": Visit}
 
 
 class DBStorage:
@@ -81,9 +81,12 @@ class DBStorage:
 
         all_cls = models.storage.all(cls)
         for value in all_cls.values():
-            if (value.id == id):
-                return value
-
+            if (cls == Patient):
+                if (value.patient_id == id):
+                    return value
+            else:
+                if (value.id == id):
+                    return value
         return None
 
     def get_patient_provider(self, cls, id):

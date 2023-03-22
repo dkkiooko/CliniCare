@@ -14,11 +14,20 @@ from models.patient import Patient
 @app_views.route('/visits/', methods=['GET'], strict_slashes=False)
 def get_visits():
     """ Gets all the visits in hospital """
+    ''' previous code
     visits = storage.all(Visit)
     visit_list = [visit.to_dict() for visit in visits]
-    return jsonify(visit_list)
+    return jsonify(visit_list)'''
+    visits = storage.all(Visit)
+    list_visits = []
+    for value in visits.values():
+            list_visits.append(value)
+    visit_dict = []
+    for i in range(0, len(list_visits)):
+        visit_dict.append(list_visits[i].to_dict())
+    return(jsonify(visit_dict))
 
-@app_views.route('/visits/<date>/', methods=['GET'], strict_slashes=False)
+@app_views.route('/visits/of/<date>/', methods=['GET'], strict_slashes=False)
 def get_visits_date(date):
     """ get all the visits on specific date
     format of date is string yyyymmdd """
@@ -41,7 +50,7 @@ def get_visit(visit_id):
         abort(404)
     return jsonify(visit.to_dict())
 
-@app_views.route('/visits/<doctor_id>/', methods=['GET'], strict_slashes=False)
+@app_views.route('/visits/of/doc/<doctor_id>/', methods=['GET'], strict_slashes=False)
 def get_doctor_visit(doctor_id):
     """ get all visits to a particular doctor"""
     list_visits = []
@@ -65,7 +74,7 @@ def get_doctor_date(doctor_id, date):
             list_visits.append(visit.to_dict())
     return jsonify(list_visits)
 
-@app_views.route('/visits/<doctor_id>/<patient_id>/', methods=['GET'], strict_slashes=False)
+@app_views.route('/visits/of/<doctor_id>/patient/<patient_id>/', methods=['GET'], strict_slashes=False)
 def get_doctor_visit_patient(doctor_id, patient_id):
     """ get all visits to a particular doctor"""
     list_visits = []

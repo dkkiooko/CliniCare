@@ -1,21 +1,21 @@
 const $ = window.$;
 const store = {};
-
 $(document).ready(function() {
-  $('section.date-filter ul li input').change(function() {
-    if (this.checked) {
-      delete store[$(this)];
-      store[$(this).attr('data-id')] = $(this).attr('data-name');
-      if (Object.keys(store).length > 0) {
-        $('section.date-filter h4').text(Object.values(store));
-      }
-    }
-  });
+  $('section.visit_input').change(function() {
+	if (this.checked) {
+		store[$(this).attr('data-id')] = $(this).attr('data-name');
+	  } else {
+		delete store[$(this).attr('data-id')];
+	  }
+	  if (Object.keys(store).length > 0) {
+		$('.date-filter h4').text(Object.values(store).join(', '));
+	  }
+	});
 
-  $('.date-filter button').click(function() {
+  $('button').click(function() {
     $.ajax({
       type: 'GET',
-      url: 'http://0.0.0.0:5001/api/v1/visits/' + encodeURIComponent(Object.keys(store)),
+      url: 'http://0.0.0.0:5001/api/v1/visits',
       contentType: 'application/json',
 	  dataType: 'json',
 	  success: function (data, textStatus) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
 							<label for="preexisting">Pre-existing Conditions</label>
 						</td>
 						<td colspan="3">
-							<output name="preexisting">${visit.pre_existing_conditions}</output>
+							<output name="preexisting">${visit[0].pre_existing_conditions}</output>
 							<!-- (value="value needed" readonly) code to be 
 							added to make input section sidplay value and be readonly-->
 						</td>

@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Client</title>
-	<link rel="stylesheet" type="text/css" href="../static/styles/client.css">
+	<link rel="stylesheet" type="text/css" href="../static/styles/client.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/logo.png">
-	<script type="text/javascript" src="../static/scripts/trial.js"></script>
+	<script type="text/javascript" src="../static/scripts/trial.js?{{ cache_id }}"></script>
 </head>
 <body>
 	<header>
@@ -16,7 +16,7 @@
 		</nav>
 	</header>
 	<main>
-		<section class="personal-data">
+		<section id="test" class="personal-data" available>
 			<table class="info">
 				<tr>
 					<td><h2>Personal Information</h2></td>
@@ -92,17 +92,13 @@
 		<section class="date-filter">
 			<ul>
 				<h2>Previous Visits:</h2>
-				{% for visit in visits %}
-				<!--Display the details when the date is clicked-->
-				<!--CHECK THE DATE TO BE USED???-->
-				<!--<select id="previous" name="previous-visit">
-					<li><option value="{{ visit[0].date }}">{{ visit[0].date }}</option></li>-->
-				<li><input type="checkbox" data-id="{{ visit.id }}" data-name="{{ visit.updated_at }}">{{ visit.updated_at }}</li>
+				{% for i in num %}
+				<li><input class="visit_input" type="checkbox" data-id="{{ visits[i].id }}" data-name="{{ visits[i].updated_at }}">{{ visits[i].updated_at }}</li>
 				{% endfor %}
 			</ul>
 			<button type="submit">Search Date</button>
 			<h3>Date Selected:</h3>
-			<h4></h4>
+			<h4>&nbsp;</h4>
 		</section>
 
 		<section class="patient-info">
