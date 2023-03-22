@@ -24,7 +24,6 @@ class Visit(BaseModel, Base):
         patient_gender = Column(Integer, nullable=False, default=0)
         phone_number = Column(Integer, nullable=False, default=0)
         price_charged = Column(Float, nullable=False, default=0)
-        sex = Column(String(10), nullable=False)
         city = Column(String(20), nullable=False)
         sub_city = Column(String(20), nullable=False)
         county = Column(String(20), nullable=False)

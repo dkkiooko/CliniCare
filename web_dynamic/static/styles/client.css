@@ -68,9 +68,7 @@
     margin-bottom: 8px;
   }
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"] {
+  output {
     display: block;
     width: 100%;
     padding: 8px;
@@ -82,9 +80,7 @@
     color: #333;
   }
 
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="email"]:focus {
+  output {
     outline: none;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   }
