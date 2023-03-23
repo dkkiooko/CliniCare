@@ -95,10 +95,10 @@
 			<ul>
 				<h2>Previous Visits:</h2>
 				{% for i in num %}
-				<li>
-					<input type="checkbox" class="radio" name="fooby[1][]" data-id="{{ visits[i].id }}" data-name="{{ visits[i].updated_at }}">
-					{{ visits[i].updated_at }}
-				</li>
+					<li>
+						<input type="checkbox" data-id="{{ visits[i].id }}" data-name="{{ visits[i].updated_at }}">
+						{{ visits[i].updated_at }}
+					</li>
 				{% endfor %}
 			</ul>
 			<button id="search-date">Search Date</button>

@@ -13,3 +13,6 @@ for i in range(0, len(list_visits)):
 	num.append(list_visits[i].to_dict())
 print(num)
 
+visit_id = '94910d8d-e537-4601-92df-62735cf0402c'
+visit = storage.get(Visit, visit_id)
+print(visit.to_dict())
