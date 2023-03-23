@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Client</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../static/styles/client.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/logo.png">
 	<script type="text/javascript" src="../static/scripts/trial.js?{{ cache_id }}"></script>
@@ -93,10 +95,13 @@
 			<ul>
 				<h2>Previous Visits:</h2>
 				{% for i in num %}
-				<li><input class="visit_input" type="checkbox" data-id="{{ visits[i].id }}" data-name="{{ visits[i].updated_at }}">{{ visits[i].updated_at }}</li>
+				<li>
+					<input type="checkbox" class="radio" name="fooby[1][]" data-id="{{ visits[i].id }}" data-name="{{ visits[i].updated_at }}">
+					{{ visits[i].updated_at }}
+				</li>
 				{% endfor %}
 			</ul>
-			<button type="submit">Search Date</button>
+			<button id="search-date">Search Date</button>
 			<h3>Date Selected:</h3>
 			<h4>&nbsp;</h4>
 		</section>
