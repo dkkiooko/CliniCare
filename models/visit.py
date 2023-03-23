@@ -21,7 +21,7 @@ class Visit(BaseModel, Base):
         name = Column(String(128), nullable=False)
         email_address = Column(String(1024), nullable=True)
         patient_age = Column(Integer, nullable=False, default=0)
-        patient_gender = Column(String(5), nullable=False, default=0)
+        patient_gender = Column(String, nullable=False)
         phone_number = Column(Integer, nullable=False, default=0)
         price_charged = Column(Float, nullable=False, default=0)
         city = Column(String(20), nullable=False)
