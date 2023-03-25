@@ -34,7 +34,28 @@ def login():
 @app.route('/doctors/', strict_slashes=False)
 def doctor():
     """ render provider page """
-    return render_template('doctor.html')
+    return render_template('doctor.html',
+                            cache_id=uuid.uuid4())
+
+
+'''@app.route('/doctors/detail/<patient_id>', strict_slashes=False)
+def doctor_redirect(patient_id):
+    Redirects the info from doctor.html to a new page to display the doctor info
+    patient = storage.get(Patient, patient_id)
+
+    visits = storage.get_patient_provider(Patient, patient_id)
+    
+    num = []
+    for i in range(0, len(visits)):
+        num.append(i)
+
+    return render_template('doctor.html',
+                        patient=patient,
+                        visits=visits,
+                        num=num,
+                        cache_id=uuid.uuid4())
+                        '''
+
 
 @app.route('/', strict_slashes=False)
 def landing():
@@ -73,7 +94,6 @@ def create_patient():
     return render_template('reception.html',
                             result=result,
                             cache_id=uuid.uuid4())
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

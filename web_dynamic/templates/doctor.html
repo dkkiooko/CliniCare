@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>Physician</title>
-	<link rel="stylesheet" type="text/css" href="../static/styles/doctor.css">
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/styles/doctor.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/logo.png">
+	<script type="text/javascript" src="../static/scripts/doctor.js?{{ cache_id }}"></script>
 </head>
 <body>
 	<header>
@@ -16,272 +20,24 @@
 	</header>
 	<main>
 		<section class="search">
-			<table class="info">
+			<table class="search_info">
 				<tr>
 					<form>
 						<th><label for="patient-id">Patient-ID</label>
-							<input type="text" placeholder="Insert ID here">
-							<button type="submit">Search</button>
+							<input id="input_patient_id" type="text" placeholder="Insert ID here">
+							<button id="search_id" type="button">Search</button>
 						</th>
 					</form>
 				</tr>
 			</table>
 		</section>
-	
-		<section class="personal-data">
-			<table class="info">
-				<tr>
-					<td><h2>Personal Information</h2></td>
-				</tr>
-				<tr>
-					<td>Name:</td>
-					<td>
-						<output name="name"></output>
-					</td>
-					<td>Age:</td>
-					<td>
-						<output name="age"></output>
-					</td>
-				</tr>
-				<tr>
-					<td>Gender:</td>
-					<td>
-						<output name="gender"></output>
-					</td>
-				</tr>
-				<tr>
-					<td><h2>Address</h2></td>
-				</tr>
-				<tr>
-					<td>Phone Number:</td>
-					<td>
-						<output name="phone"></output>
-					</td>
-					<td>Email Address:</td>
-					<td>
-						<output name="email"></output>
-					</td>
-				</tr>
-				<tr>
-					<td> </td>
-				</tr>
-				<tr>
-					<td>City:</td>
-					<td>
-						<output name="city"></output>
-					</td>
-					<td>Sub-city:</td>
-					<td>
-						<output name="sub-city"></output>
-					</td>
-				</tr>
-				<tr>
-					<td>County:</td>
-					<td>
-						<output name="county"></output>
-					</td>
-					<td>Location:</td>
-					<td>
-						<output name="location"></output>
-					</td>
-				</tr>
-				<tr>
-					<td><h2>Insurance Details</h2></td>
-				</tr>
-				<tr>
-					<td>Insurance Company:</td>
-					<td>
-						<output name="insurance-name"></output>
-					</td>
-					<td>Insurance Number:</td>
-					<td>
-						<output name="insurance-number"></output>
-					</td>
-				</tr>
-			</table>
-		</section>
 
-		<section class="date-filter">
-			<ul>
-				<h2>Previous Visits:</h2>
-				<!--Display the details when the date is clicked-->
-				<!--Add select option to make it select from a list-->
-				<select id="previous" name="previous-visit">
-					<option value="date1"><li>Date 1</li></option>
-					<option value="date2"><li>Date 2</li></option>
-				</select>
-			</ul>
-			<button type="submit">Add New Visit</button>
+		<section id="test" class="personal-data" available>
+			<!-- Personal Data jQuery Section-->
 		</section>
 
 		<section class="patient-info">
-			<table>
-				<form>
-					<tr>
-						<td>
-							<label for="preexisting">Pre-existing Conditions</label>
-						</td>
-						<td colspan="3">
-							<input type="text" placeholder="Type Pre-existing consitions with medications currently on here">
-							<!-- (value="value needed" readonly) code to be 
-							added to make input section sidplay value and be readonly-->
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="history">History</label>
-						</td>
-						<td colspan="3">
-							<input type="text" placeholder="History">
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<h2>Vital Signs and Anthropometry</h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="hr">Heart Rate:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="pr">Pulse Rate:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="rr">Respiratory Rate:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="temp">Temprature:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="height">Height:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="temp">Weight:</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<h2>Physical Examination</h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="hr">HEENT</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="pr">Abdomen</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="rr">Lymphoglandular</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="temp">Genitourinary</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="height">Chest</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="temp">Integumentary</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="height">Cardiovascular</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-						<td>
-							<label for="temp">Musculoskeletal</label>
-						</td>
-						<td>
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="height">Additional</label>
-						</td>
-						<td colspan="2">
-							<input type="text" placeholder="Insert Here">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="lab">Laboratory Investigations</label>
-						</td>
-						<td colspan="3">
-							<input type="text" placeholder="Type Laboratory Investigation orders">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="dx">Diagnosis</label>
-						</td>
-						<td colspan="3">
-							<input type="text" placeholder="Diagnosis">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="med">Medications</label>
-						</td>
-						<td colspan="3">
-							<input type="text" placeholder="Medications to be given">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button type="submit">Submit</button>
-						</td>
-					</tr>
-				</form>
-			</table>
+			<!-- jQuery section for retrieval of previous visit or to add new visit-->
 		</section>
 	</main>
 	<footer>

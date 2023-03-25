@@ -18,7 +18,7 @@ def get_patients():
     patient_list = [patient.to_dict() for patient in patients]
     return jsonify(patient_list)
 
-@app_views.route('/patients/<date>/', methods=['GET'], strict_slashes=False)
+@app_views.route('/patients/on/<date>/', methods=['GET'], strict_slashes=False)
 def get_patients_date(date):
     """ get all the patients on specific date
     format of date is string yyyymmdd """
@@ -32,3 +32,9 @@ def get_patients_date(date):
             patients_of_day.append(patient.to_dict())
     
     return jsonify(patients_of_day)
+
+@app_views.route('/patient/<patient_id>', methods=['GET'], strict_slashes=False)
+def get_patients_id(patient_id):
+    """ Gets a patient using patient id """
+    patient = storage.get(Patient, patient_id)
+    return jsonify(patient.to_dict())
