@@ -27,6 +27,20 @@ def get_visits():
         visit_dict.append(list_visits[i].to_dict())
     return(jsonify(visit_dict))
 
+@app_views.route('/save_visits/', methods=['POST'], strict_slashes=False)
+def save_visit():
+    '''
+    Recieves and saves a visit to the database
+    '''
+    if not request.get_json():
+        abort(400, description="Not a JSON")
+
+    data = request.get_json()
+    visit = Visit(**data)
+    visit.save()
+    return make_response(jsonify(visit.to_dict()), 201)
+
+
 @app_views.route('/patient/visit/<patient_id>', methods=['GET'], strict_slashes=False)
 def get_visits_id(patient_id):
     '''
