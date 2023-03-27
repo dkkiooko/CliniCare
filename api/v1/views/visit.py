@@ -48,6 +48,8 @@ def get_visits_id(patient_id):
     '''
     visits = storage.get_patient_provider(Patient, patient_id)
     visit = []
+    if visits is None:
+        return(jsonify({'error': 'Not Found'}, 404))
     for i in range(0, len(visits)):
         visit.append(visits[i].to_dict())
     return(jsonify(visit))

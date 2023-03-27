@@ -18,6 +18,16 @@ def get_patients():
     patient_list = [patient.to_dict() for patient in patients]
     return jsonify(patient_list)
 
+@app_views.route('create_patient', methods=['POST'], strict_slashes=False)
+def create_patient():
+    if not request.get_json():
+        abort(400, description="Not a JSON")
+    
+    data = request.get_json()
+    patient = Patient(**data)
+    patient.save()
+    return make_response(jsonify(patient.to_dict(), 201))
+
 @app_views.route('/patients/on/<date>/', methods=['GET'], strict_slashes=False)
 def get_patients_date(date):
     """ get all the patients on specific date

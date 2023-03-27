@@ -99,16 +99,29 @@ $(document).ready(function () {
 
     $.get('http://127.0.0.1:5001/api/v1/patient/visit/' + inputVal, function (data, textStatus) {
       if (textStatus === 'success') {
-        $('table.patient-tab').remove();
-				  for (let i = 0; i < data.length; i++) {
-        		$('section.date-filter ul').append(
-					  `
+        if (data[1] === 404) {
+          $('section.datefilter button').remove();
+          $('section.date-filter ul').append(
+            `
 					  <li>
-						  <input type="checkbox" data-id="${data[i].id}" data-name="${data[i].updated_at}">
-						  ${data[i].updated_at}
+						  <input type="checkbox" data-id="" data-name="">
+						  No Previous Records Found
 					  </li>
-					  `
-          );
+            `
+          )
+        }
+        else {
+        $('table.patient-tab').remove();
+            for (let i = 0; i < data.length; i++) {
+              $('section.date-filter ul').append(
+              `
+              <li>
+                <input type="checkbox" data-id="${data[i].id}" data-name="${data[i].updated_at}">
+                ${data[i].updated_at}
+              </li>
+              `
+            );
+          }
         }
       }
 
@@ -318,11 +331,12 @@ $(document).ready(function () {
       var time = dt.getDate() + "/" + dt.getMonth() + "/" + dt.getFullYear() + " G.C.  " + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
       $('table.patient-tab').remove();
       $('table.add_patient').remove();
+      $('.timeTeller').remove();
       $('section.date-filter').remove();
       $('section.patient-info').append(
         `
         <table class="add_patient">
-        <h4>Entering new Data for Today ( ${time} )</h4>
+        <h4 class="timeTeller">Entering new Data for Today ( ${time} )</h4>
 				<form>
 					<tr>
 						<td>
