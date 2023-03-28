@@ -87,9 +87,9 @@ $(document).ready(function () {
             <ul>
               <h2>Previous Visits:</h2>
             </ul>
-            <button id="search-date">Search Date</button>
             <h3>Date Selected:</h3>
             <h4>&nbsp;</h4>
+            <button id="search-date">Search Date</button>
           </section>
           <button type="button" id="add_new">Add New Visit</button>
 					`
@@ -100,7 +100,8 @@ $(document).ready(function () {
     $.get('http://127.0.0.1:5001/api/v1/patient/visit/' + inputVal, function (data, textStatus) {
       if (textStatus === 'success') {
         if (data[1] === 404) {
-          $('section.datefilter button').remove();
+          $('section button#search-date').remove();
+          $('section.date-filter h3').remove();
           $('section.date-filter ul').append(
             `
 					  <li>
@@ -145,6 +146,10 @@ $(document).ready(function () {
         }
       });
       $('#search-date').click(function () {
+        if (Object.keys(store).length == 0) {
+          $('.date-filter h4').text('No Date Selected');
+        }
+        else {
         $.get('http://127.0.0.1:5001/api/v1/visits/' + Object.keys(store), function (data, textStatus) {
           if (textStatus === 'success') {
             $('table.patient-tab').remove();
@@ -324,6 +329,7 @@ $(document).ready(function () {
             );
           }
         });
+      }
       });
 
     $('#add_new').click(function () {
@@ -587,7 +593,6 @@ $(document).ready(function () {
               dataType: 'json',
               success: function() {
                 alert('Successfully Inserted New Visit')
-                window.location.reload()
               }
             })
           }

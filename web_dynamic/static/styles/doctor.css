@@ -43,6 +43,7 @@
   }
 
   section {
+    min-height: 90px;
     margin-bottom: 32px;
     padding: 16px;
     background-color: #fff;
@@ -142,6 +143,11 @@
     border-bottom: 2px solid #ddd;
   }
 
+  section.date-filter h3,
+  section.date-filter h4 {
+    margin-left: 30px;
+  }
+
   button {
     background-color: #009688;
     color: #fff;
@@ -154,6 +160,16 @@
 
   button:hover {
     background-color: #00796b;
+  }
+
+  button#search-date {
+    margin-left: 30px;
+  }
+
+  button#add_new {
+    margin-left: 45px;
+    margin-top: 20px;
+    background-color: purple;
   }
 
   ul {

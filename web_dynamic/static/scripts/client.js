@@ -22,6 +22,10 @@ $(document).ready(function() {
   });
 
   $('#search-date').click(function() {
+    if (Object.keys(store).length == 0) {
+      $('.date-filter h4').text('No Date Selected');
+    }
+    else {
     $.get('http://127.0.0.1:5001/api/v1/visits/' + Object.keys(store), function (data, textStatus) {
       if (textStatus === 'success') {
         $('table.patient-tab').remove();
@@ -201,5 +205,6 @@ $(document).ready(function() {
         );
       }
     });
+  }
   });
 });

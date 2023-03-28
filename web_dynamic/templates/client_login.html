@@ -7,11 +7,14 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../static/styles/style.css">
 </head>
-<header><b><u>Notice:</u></b> This login page is to be used by clients only.<br>If a provider please login <a href={{ url_for('login') }}>here</a></header>
+<header>
+	<b><u>Notice:</u></b> This login page is to be used by clients only.<br>If a provider please login <a href={{ url_for('login') }}>here</a>
+</header>
 <body>
 	<div class="background"></div>
 	<div class="login-box">
-		<h2>Login</h2>
+		<h1><a href="http://127.0.0.1:5000/">CliniCare</a></h1>
+		<h2>Client Login</h2>
 		<form method="POST">
 			<label for="patient_id">Patient-ID</label>
 			<input type="text" name="username" id="username" placeholder="Enter your patient-id">
