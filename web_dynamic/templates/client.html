@@ -93,6 +93,12 @@
 		</section>
 
 		<section class="date-filter">
+			{% if length == 0 %}
+			<li>
+				<input type="checkbox" data-id="" data-name="">
+				There is No Previous Visit
+			</li>
+			{% elif length >= 1  %}
 			<ul>
 				<h2>Previous Visits:</h2>
 				{% for i in num %}
@@ -105,6 +111,7 @@
 			<button id="search-date">Search Date</button>
 			<h3>Date Selected:</h3>
 			<h4>&nbsp;</h4>
+			{% endif %}
 		</section>
 
 		<section class="patient-info">

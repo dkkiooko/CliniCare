@@ -22,21 +22,32 @@ mysql = MySQL(app)
 def patient(patient_id):
     """ retrieve patients by id """
     if 'username' in session:
-        patient = storage.get(Patient, patient_id)
-        visits = storage.get_patient_provider(Patient, patient_id)
-    
-        num = []
-        for i in range(0, len(visits)):
-            num.append(i)
-        return render_template('client.html',
-                        patient=patient,
-                        visits=visits,
-                        num=num,
-                        cache_id=uuid.uuid4())
-    else:
-        return redirect(url_for('client_login'))
+        username = session['username']
+        if username == patient_id:
+            patient = storage.get(Patient, patient_id)
+            visits = storage.get_patient_provider(Patient, patient_id)
+        
+            num = []
+            if visits is None:
+                length = 0
+            else:
+                length = len(visits)
+                for i in range(0, len(visits)):
+                    num.append(i)
+            return render_template('client.html',
+                            patient=patient,
+                            visits=visits,
+                            num=num,
+                            length=length,
+                            cache_id=uuid.uuid4())
+        else:
+            session.pop('username', None)
+            return redirect(url_for('client_login'))
+    return redirect(url_for('client_login'))
 
-
+'''
+TO BE WORKED ON
+'''
 @app.route('/register', methods=['POST'])
 def register():
     username = request.form['username']
@@ -139,9 +150,15 @@ def landing():
 @app.route('/reception', strict_slashes=False)
 def create_patient():
     """ create new patient on reception page"""
-
-    return render_template('reception.html',
-                            cache_id=uuid.uuid4())
+    if 'username' in session:
+        username = session['username']
+        if username == 'reception':
+            return render_template('reception.html',
+                                cache_id=uuid.uuid4())
+        else:
+            return redirect( url_for('client_login'))
+    else:
+        return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
