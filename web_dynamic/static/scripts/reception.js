@@ -18,18 +18,20 @@ $(document).ready(function () {
 		const emergencyLName = document.getElementById('emergency_lname').value;
 		const emergencyPhone = document.getElementById('emergency_number').value;
 		const emergencyEmail = document.getElementById('emergency_email').value;
+		const patient_id = 'test_pt_000002'
 
 		$.ajax({
 			type: "POST",
 			url: 'http://127.0.0.1:5001/api/v1/create_patient',
 			data: JSON.stringify({
+			  "patient_id": patient_id,
 			  "fname": fname,
 			  "lname": lname,
 			  "birthyear": birthyear,
 			  "email_address": email,
 			  "sex": sex,
 			  "city": city,
-			  "sub_city": subcity,
+			  "subcity": subcity,
 			  "county": county,
 			  "location": location,
 			  "phone_number": phone,
@@ -45,7 +47,8 @@ $(document).ready(function () {
 			contentType: 'application/json',
 			dataType: 'json',
 			success: function() {
-				alert('successful')
+				alert('Successfully Added New Patient with id' + ' ' + data.patient_id)
+				window.location.reload()
 			}
 		})
 	})

@@ -61,7 +61,10 @@ def login():
         cur.close()
         if user:
             session['username'] = username
-            return redirect(url_for('doctor'))
+            if username == 'reception':
+                return redirect(url_for('create_patient'))
+            else:
+                return redirect(url_for('doctor'))
         else:
             return render_template('login.html', error='Invalid username or password')
     else:

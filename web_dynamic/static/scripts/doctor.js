@@ -586,7 +586,8 @@ $(document).ready(function () {
               contentType: 'application/json',
               dataType: 'json',
               success: function() {
-                alert('successful')
+                alert('Successfully Inserted New Visit')
+                window.location.reload()
               }
             })
           }
