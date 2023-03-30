@@ -1,40 +1,73 @@
   body {
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
     padding: 0;
+    background-image: url('../images/edit.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+  .main-header {
+    background-color: #2F4F4F;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  header {
-    background-color: #009688;
-    color: #fff;
+.main-header h1 {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}
+
+.main-header h2 {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.main-header nav ul {
+    list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-  }
+}
 
-  h1 {
-    font-size: 32px;
-    margin: 0;
-    padding: 0;
-  }
+.main-header li {
+    margin-left: 20px;
+    color: #FFFFFF;
+}
 
-  nav {
-    display: flex;
-  }
+.main-header a.fa-sign-out:before {
+    content: "\f2f5";
+    font-family: "FontAwesome";
+    margin-right: 5px;
+}
 
-  nav a {
-    color: #fff;
-    font-size: 18px;
-    margin-left: 16px;
-    text-decoration: none;
-  }
+.main-header li:first-of-type {
+    margin-right: auto;
+}
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+.main-header li:first-of-type:after {
+    content: "|";
+    margin-left: 20px;
+    color: #FFFFFF;
+}
+
+.main-header li:last-of-type a:hover {
+    color: #FFD700;
+}
+
+.fa-sign-out {
+  font-size: 24px;
+}
 
   main {
     max-width: 1500px;
@@ -45,8 +78,8 @@
   section {
     min-height: 90px;
     margin-bottom: 32px;
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 16px;
-    background-color: #fff;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
@@ -143,6 +176,10 @@
     border-bottom: 2px solid #ddd;
   }
 
+  table.search_info th {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
   section.date-filter h3,
   section.date-filter h4 {
     margin-left: 30px;
@@ -183,6 +220,7 @@
       padding: 20px 0;
       font-size: 18px;
       text-align: center;
+      margin-top: 20%;
     }
   
     /* Style the links */

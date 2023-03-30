@@ -12,11 +12,12 @@ body {
 
 .container {
   background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
 }
 
 /* Header Styles */
 header {
-  height: 40vh;
+  height: 30vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -39,6 +40,7 @@ nav ul {
 
 nav li {
   margin-right: 30px;
+  font-size: 25px;
 }
 
 nav li:last-child {
@@ -105,129 +107,222 @@ nav .active {
   /* Services */
 
   .services {
-    background: url('../images/bg4.jpg') no-repeat center center fixed;
-    background-size: cover;
-    padding: 60px 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 50px;
+  }
+  
+  .services h2 {
     text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    height: 100%;
+    width: 100%;
   }
   
   .services-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .services-list h3{
-    margin-top: 220px;
+    justify-content: center;
+    align-items: center;
   }
   
   .service-item {
-    width: 30%;
-    height: 400px;
-    margin-bottom: 60px;
+    flex-basis: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
     position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
   }
   
-  .service-item:hover {
-    z-index: 2;
+  .service-item h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
+  
+  .service-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
   
   .service-item::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -100%;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center center;
-    transition: all 0.3s ease-in-out;
-    z-index: -1;
-  }
-  
-  .service-item:nth-child(1)::before {
-    background-image: url('../images/bg1.jpg');
-  }
-  
-  .service-item:nth-child(2)::before {
-    background-image: url('../images/bg2.jpg');
-  }
-  
-  .service-item:nth-child(3)::before {
-    background-image: url('../images/bg3.jpg');
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1;
   }
   
   .service-item:hover::before {
-    opacity: 0.8;
+    opacity: 1;
+    top: 0;
   }
   
-  /* Care Providers */
-
-  .care_providers {
-    margin: 50px 0;
+  .service-item:hover .btn {
+    transform: translateY(0%);
   }
 
-  .care_providers p {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  .item1 {
+    background-image: url('../images/patient_portal.png');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
-  .providers {
+  .item2 {
+    background-image: url('../images/physician_portal_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .item3 {
+    background-image: url('../images/login_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* About Us Section */
+#about-us {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 80px 0;
+}
+
+#about-us h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+#about-us p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: black;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.about {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .about {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 50px;
-    margin-bottom: 30px;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-
-  .providers h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+  .col-lg-12 {
+    flex-basis: 100%;
+    max-width: 100%;
   }
+}
 
-  .providers h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+@media (min-width: 992px) {
+  .about {
+    max-width: 1140px;
   }
-
-  .providers h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .col-lg-12 {
+    flex-basis: 100%;
+    max-width: 100%;
   }
+}
 
-  .pro1 {
-    background-image: url('../images/doc.jpg');
-    background-size: cover;
-    background-position: center;
-  }
 
-  .pro2 {
-    background-image: url('../images/doc1.jpg');
-    background-size: cover;
-    background-position: center;
-  }
+  /* Styling for care_providers section */
+.care_providers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
 
-  .pro3 {
-    background-image: url('../images/doc2.jpg');
-    background-size: cover;
-    background-position: center;
-  }
+.care_providers p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
 
-  .providers .name,
-  .providers .specialty,
-  .providers .description {
-    color: #fff;
-    text-shadow: 2px 2px #000;
-  }
+.providers {
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+  margin: 20px;
+  transition: transform 0.2s;
+}
 
+.providers:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.providers img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.pro1 {
+  min-height: 500px;
+  background-image: url('../images/bek.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40%;
+}
+
+.pro2 {
+  background-image: url('../images/dan.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.providers h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.providers h3, .providers h4 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: purple;
+}
+
+.providers a {
+  display: relative;
+
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.providers a:hover {
+  color: #000;
+}
+
+.specific {
+  margin-top: 85%;
+}
+
+.specific2 {
+  margin-top: 85%;
+}
 
   /* News and Videos */
   .news_vid {
@@ -239,6 +334,7 @@ nav .active {
   .news {
     flex: 1;
     margin-right: 30px;
+    background-color: rgba(0, 0, 0, 0);
   }
 
   .news h2 {
@@ -249,6 +345,7 @@ nav .active {
 
   .videos {
     display: 1;
+    margin-left: 10%;
   }
 
   .videos h2 {
@@ -356,6 +453,17 @@ nav .active {
     background-color: #2197a5;
   }
 
+  button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100px;
+  }
+
   /* Style all font awesome icons */
   .fa {
     padding: 20px;
@@ -391,6 +499,13 @@ nav .active {
   .fa-linkedin {
     background: #0077b5;
     color: white;
+  }
+
+  /* Github */
+  .fa-github {
+    font-size: 36;
+    background: white;
+    color: #171515;
   }
 
   /* Style the footer */

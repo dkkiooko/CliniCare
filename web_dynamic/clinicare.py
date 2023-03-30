@@ -39,6 +39,7 @@ def patient(patient_id):
                             visits=visits,
                             num=num,
                             length=length,
+                            username=username,
                             cache_id=uuid.uuid4())
         else:
             session.pop('username', None)
@@ -122,41 +123,31 @@ def doctor():
         return redirect(url_for('login'))
 
 
-'''@app.route('/doctors/detail/<patient_id>', strict_slashes=False)
-def doctor_redirect(patient_id):
-    Redirects the info from doctor.html to a new page to display the doctor info
-    patient = storage.get(Patient, patient_id)
-
-    visits = storage.get_patient_provider(Patient, patient_id)
-    
-    num = []
-    for i in range(0, len(visits)):
-        num.append(i)
-
-    return render_template('doctor.html',
-                        patient=patient,
-                        visits=visits,
-                        num=num,
-                        cache_id=uuid.uuid4())
-                        '''
-
-
 @app.route('/', strict_slashes=False)
 def landing():
     """ landing page """
-    return render_template('landing_page.html')
+    return render_template('landing_page.html',
+                           cache_id=uuid.uuid4())
+
+@app.route('/demo', strict_slashes=False)
+def demo():
+    ''' Demo page'''
+    return render_template('demo.html',
+                           cache_id=uuid.uuid4())
 
 
 @app.route('/reception', strict_slashes=False)
 def create_patient():
     """ create new patient on reception page"""
+    username = session['username']
     if 'username' in session:
         username = session['username']
         if username == 'reception':
             return render_template('reception.html',
+                                   username=username,
                                 cache_id=uuid.uuid4())
         else:
-            return redirect( url_for('client_login'))
+            return redirect( url_for('login'))
     else:
         return redirect(url_for('login'))
 

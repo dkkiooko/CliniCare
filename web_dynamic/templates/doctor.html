@@ -8,13 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="../static/styles/doctor.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/logo.png">
 	<script type="text/javascript" src="../static/scripts/doctor.js?{{ cache_id }}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<header>
+	<header class="main-header">
 		<h1><a href="http://127.0.0.1:5000/">CliniCare</a></h1>
+		<h2>Physician Portal</h2>
 		<nav>
 			<ul>
-				<li><a href="{{ url_for('logout') }}">Logout</a></li>
+				<li>Logged in with Provider-ID {{ username }}</li>
+				<li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
 			</ul>
 		</nav>
 	</header>

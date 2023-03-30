@@ -8,13 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="../static/styles/client.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/logo.png">
 	<script type="text/javascript" src="../static/scripts/client.js?{{ cache_id }}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<header>
+	<header class="main-header">
 		<h1><a href="http://127.0.0.1:5000/">CliniCare</a></h1>
+		<h2>Patient Portal</h2>
 		<nav>
 			<ul>
-				<li><a href="{{ url_for('client_logout') }}">Logout</a></li>
+				<li>Logged in with Patient-ID {{ username }}</li>
+				<li><a href="{{ url_for('client_logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -29,7 +32,7 @@
 					<td>
 						<output name="name">{{ patient.fname }} {{ patient.lname }}</output>
 					</td>
-					<td>Age:</td>
+					<td>Birth Year:</td>
 					<td>
 						<output name="age">{{ patient.birthyear }}</output>
 					</td>
@@ -108,9 +111,9 @@
 					</li>
 				{% endfor %}
 			</ul>
-			<button id="search-date">Search Date</button>
 			<h3>Date Selected:</h3>
 			<h4>&nbsp;</h4>
+			<button id="search-date">Search Date</button>
 			{% endif %}
 		</section>
 
