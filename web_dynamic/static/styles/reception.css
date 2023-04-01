@@ -68,6 +68,13 @@ main {
 	background-color: rgba(0, 0, 0, 0.1);;
 }
 
+main ul li {
+  text-align: center;
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
 section {
 	margin-bottom: 20px;
 }
@@ -78,7 +85,6 @@ section h2 {
 
 .new h2 {
 	margin-top: 0;
-	margin-left: 100px;
 }
 
 form {

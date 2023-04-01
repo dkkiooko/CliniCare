@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physician Register</title>
+	<meta charset="UTF-8">
+	</head>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+	<form method="POST" action="/doc_register">
+	<input type="text" name="username" placeholder="Username">
+	<input type="password" name="password" placeholder="Password">
+	<input type="submit" value="Register">
+</form>
+</html>

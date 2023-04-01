@@ -1,5 +1,7 @@
 $(document).ready(function () {
   $('#search_id').click(function () {
+    const doctorName = document.getElementById('doctor_name').value;
+    const doctorId = document.getElementById('doctor_id').value;
     const inputVal = document.getElementById('input_patient_id').value;
     $.get('http://127.0.0.1:5001/api/v1/patient/' + inputVal, function (data, textStatus) {
       if (textStatus === 'success') {
@@ -549,15 +551,14 @@ $(document).ready(function () {
             const dx = document.getElementById("dx").value;
             const med = document.getElementById("med").value;
             const price_charged = 0;
-            const doctor_name = 'Nisha Patel';
-            const doctor_id = '18d24670-bc4e-43a2-bffb-7edef0df0f76'
+
             $.ajax({
               type: "POST",
               url: 'http://127.0.0.1:5001/api/v1/save_visits',
               data: JSON.stringify({
                 "patient_id": inputVal,
-                "doctor_id": doctor_id,
-                "doctor_name": doctor_name,
+                "doctor_id": doctorId,
+                "doctor_name": doctorName,
                 "name": name,
                 "email_address": email,
                 "patient_age": age,
@@ -593,6 +594,7 @@ $(document).ready(function () {
               dataType: 'json',
               success: function() {
                 alert('Successfully Inserted New Visit')
+                window.location.href = window.location.href;
               }
             })
           }

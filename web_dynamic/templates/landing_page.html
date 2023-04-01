@@ -18,8 +18,8 @@
 			</section>
 			<nav>
 				<ul>
-					<li><a href="http://127.0.0.1:5000/" class="active">Home</a></li>
-					<li><a href="http://127.0.0.1:5000/demo">Demo</a></li>
+					<li><a href="{{ url_for('landing') }}" class="active">Home</a></li>
+					<li><a href="{{ url_for('demo') }}">Demo</a></li>
 					<li><a href="#about-us">About Us</a></li>
 					<li><a href="#developers">Developers</a></li>
 					<li><a href="#videos">Videos</a></li>
@@ -96,9 +96,7 @@
 					<h2>Demo</h2>
 					<div class="vids">
 						<section class="vid1">
-							<video width ="1080" height="540" controls>
-								<source src="../static/videos/vid1.mp4" type="video/mp4">
-							</video>
+							<iframe width="720" height="315" src="https://www.youtube.com/embed/5LBEPRgQiN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							<h3>CliniCare at work</h3>
 								<p></p>
 						</section>
@@ -121,7 +119,6 @@
 				</form>
 			</section>
 		</div>
-		<a href="https://www.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_6190059.htm#query=medical%20background&position=4&from_view=search&track=ais">Image by senivpetro</a>
 		<footer>
 			<p>This is the landing page of a portfolio project done for 
 				<a href="https://www.alxafrica.com/software-engineering/" target="_blank">ALX software engineering</a> proram.<br>
@@ -129,6 +126,7 @@
 				<a href="https://github.com/" target="_blank">github repository</a></p>
 				<p>Powered by: <a href="https://github.com/bek2518" target="_blank">Bek</a> and <a href="https://github.com/dkkiooko" target="_blank">Dan</a></p>
 				<p>&copy; 2023 CliniCare EMR</p>
+				<p><a href="https://www.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_6190059.htm#query=medical%20background&position=4&from_view=search&track=ais">Image by senivpetro</a></p>
 		</footer>
 	</body>
 </html>

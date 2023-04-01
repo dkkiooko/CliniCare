@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header class="main-header">
-		<h1><a href="http://127.0.0.1:5000/">CliniCare</a></h1>
+		<h1><a href="{{ url_for('landing') }}">CliniCare</a></h1>
 		<h2>Reception Portal</h2>
 		<nav>
 			<ul>
@@ -24,6 +24,15 @@
 	
 	<main>
 		<section id="personal-data new" class="new">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul class="messages">
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
 			<form class="test">
 				<h2>Personal Data</h2>
 				<label for="name">First Name:</label>
@@ -77,6 +86,9 @@
 				<button type="button" id="create_patient">Create Patient</button>
 			</form>
 			<br><br>
+		</section>
+		<section class="register">
+			<!-- Section for register jquery append-->
 		</section>
 	</main>
 	<footer>

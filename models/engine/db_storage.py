@@ -81,6 +81,10 @@ class DBStorage:
             if (cls == Patient):
                 if (value.patient_id == id):
                     return value
+            
+            if (cls == Doctor):
+                if (value.doctor_id == id):
+                    return value
             else:
                 if (value.id == id):
                     return value

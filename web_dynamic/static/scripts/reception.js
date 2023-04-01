@@ -18,13 +18,11 @@ $(document).ready(function () {
 		const emergencyLName = document.getElementById('emergency_lname').value;
 		const emergencyPhone = document.getElementById('emergency_number').value;
 		const emergencyEmail = document.getElementById('emergency_email').value;
-		const patient_id = 'test_pt_000002'
 
 		$.ajax({
 			type: "POST",
 			url: 'http://127.0.0.1:5001/api/v1/create_patient',
 			data: JSON.stringify({
-			  "patient_id": patient_id,
 			  "fname": fname,
 			  "lname": lname,
 			  "birthyear": birthyear,
@@ -46,9 +44,19 @@ $(document).ready(function () {
 			}),
 			contentType: 'application/json',
 			dataType: 'json',
-			success: function() {
-				alert('Successfully Added New Patient with id' + ' ' + data.patient_id)
-				window.location.reload()
+			success: function(data) {
+				$('section.new').remove();
+				$('section.register').append( 
+					`
+					<form method="POST" action="/register">
+						<label type="text" name="username">Patient-ID</label>
+						<input type="text" name="username" value="${data[0].patient_id}" readonly>
+						<label>Password</label>
+						<input type="password" name="password" placeholder="Password">
+						<button type="submit">Register</button>
+					</form>
+					`
+				)
 			}
 		})
 	})
