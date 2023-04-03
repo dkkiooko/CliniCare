@@ -1,0 +1,129 @@
+USE clinicare_dev_db;
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("a7a9f08e-6ec3-4811-99fb-eb15b03e3790" , "2020-01-01 00:00:00.000000000" , "2020-01-01 00:00:00.000000000" , "dc-000000" , "Irina" , "Fuchs" , 12, "Internal Medicine");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("247bfc7d-f8da-4231-9de1-0c00dba89d06" , "2020-01-27 02:17:08.571428571" , "2020-01-27 02:17:08.571428571" , "dc-000001" , "Samina" , "Raghid" , 14, "Family Medicine");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("02e31266-cf0e-4a46-9e25-4627c9506f31" , "2020-02-22 04:34:17.142857143" , "2020-02-22 04:34:17.142857143" , "dc-000002" , "Sarita" , "Khatri" , 16, "Pediatrics");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("1a5d32ff-6591-409a-955a-70dc78071c70" , "2020-03-19 06:51:25.714285714" , "2020-03-19 06:51:25.714285714" , "dc-000003" , "Larisa" , "Veksman" , 18, "psychiatry");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("99db78ca-a424-4ede-a963-b52e16dd978e" , "2020-04-14 09:08:34.285714286" , "2020-04-14 09:08:34.285714286" , "dc-000004" , "Dina" , "Louie" , 20, "OB/GYN");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("5333ed77-031d-4b90-97f9-18fc4d4ca8cc" , "2020-05-10 11:25:42.857142858" , "2020-05-10 11:25:42.857142858" , "dc-000005" , "Teresa" , "Chan" , 22, "Other");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("370c3048-3f12-49ac-9b7b-609993f91aec" , "2020-06-05 13:42:51.428571428" , "2020-06-05 13:42:51.428571428" , "dc-000006" , "Kevin" , "Charlotten" , 24, "PMR");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("545fc11a-a478-4e91-873c-44461dac8bca" , "2020-07-01 16:00:00.000000000" , "2020-07-01 16:00:00.000000000" , "dc-000007" , "Fei" , "Wang" , 26, "Cardiology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("b8baad71-d258-482f-8bb6-f30d9f485c0f" , "2020-07-27 18:17:08.571428572" , "2020-07-27 18:17:08.571428572" , "dc-000008" , "Melaine" , "McLean" , 28, "Podiatry");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("b74884ab-07a0-4c4f-9c1b-98139f7a7d66" , "2020-08-22 20:34:17.142857144" , "2020-08-22 20:34:17.142857144" , "dc-000009" , "Dilia" , "Castanos" , 30, "Pediatric Endocrinology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("44966f34-4bae-40e1-93ad-e18cf900e1c0" , "2020-09-17 22:51:25.714285716" , "2020-09-17 22:51:25.714285716" , "dc-000010" , "Hemant" , "Patel" , 32, "Addiction");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("1e1daa83-6926-4dfb-beda-f7733745bee3" , "2020-10-14 01:08:34.285714288" , "2020-10-14 01:08:34.285714288" , "dc-000011" , "Naveen" , "Pesala" , 34, "Multi-Specialty");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("c75947aa-5637-4cd4-b8d3-10dd969ef27f" , "2020-11-09 03:25:42.857142856" , "2020-11-09 03:25:42.857142856" , "dc-000012" , "Vinod" , "Bhagat" , 36, "HIV");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("5b93d2bb-c56e-4ece-b401-f61db83cf76c" , "2020-12-05 05:42:51.428571428" , "2020-12-05 05:42:51.428571428" , "dc-000013" , "Nisha" , "Patel" , 38, "Health Care for the Homeless");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("1ed7faad-09a9-4a6b-b7ac-16e56f2220ce" , "2020-12-31 08:00:00.000000000" , "2020-12-31 08:00:00.000000000" , "dc-000014" , "Ishita" , "Thakkar" , 40, "Family Planning");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("0813377d-5071-484a-9468-600719ef8cf7" , "2021-01-26 10:17:08.571428572" , "2021-01-26 10:17:08.571428572" , "dc-000015" , "Michelle" , "Senbertrand" , 42, "MRDD");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("16155d7b-6437-4cb8-a550-292a6ebf3914" , "2021-02-21 12:34:17.142857144" , "2021-02-21 12:34:17.142857144" , "dc-000016" , "Tinatin" , "Urphanishvili" , 44, "GYN");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("bec72326-29e0-4d1c-b405-c5271deab48e" , "2021-03-19 14:51:25.714285712" , "2021-03-19 14:51:25.714285712" , "dc-000017" , "Roberto" , "Gabitto" , 46, "Oncology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("71fb310d-93fb-49c0-bc12-697cd7b60c46" , "2021-04-14 17:08:34.285714288" , "2021-04-14 17:08:34.285714288" , "dc-000018" , "Meron" , "Kristos" , 48, "Infectious Disease");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("af8653c9-de15-431b-b4bd-233f5a912059" , "2021-05-10 19:25:42.857142856" , "2021-05-10 19:25:42.857142856" , "dc-000019" , "Henghe" , "Tien" , 50, "Allergy");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("aea5f86b-9536-440a-8c71-788152a176a7" , "2021-06-05 21:42:51.428571432" , "2021-06-05 21:42:51.428571432" , "dc-000020" , "Henry" , "Bellutta" , 52, "Geriatric Medicine");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("ca167d27-43d9-4566-aba3-590d8c831139" , "2021-07-02 00:00:00.000000000" , "2021-07-02 00:00:00.000000000" , "dc-000021" , "Henry" , "Sardar" , 54, "Ophthamology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("a33e570d-3148-43a0-a0af-aa7a28c2c2c2" , "2021-07-28 02:17:08.571428576" , "2021-07-28 02:17:08.571428576" , "dc-000022" , "Henry" , "Ting" , 56, "Endocrinology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("162346ae-43aa-4eb6-857e-5a5e2419ee57" , "2021-08-23 04:34:17.142857144" , "2021-08-23 04:34:17.142857144" , "dc-000023" , "David" , "Faphounda" , 58, "Optometry");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("b0d03f7b-0045-4325-8b24-8d0c1700c567" , "2021-09-18 06:51:25.714285712" , "2021-09-18 06:51:25.714285712" , "dc-000024" , "A" , "Stewart" , 60, "Sports Medicine");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("1e4bdbba-91c1-454b-86d2-449663fb282e" , "2021-10-14 09:08:34.285714288" , "2021-10-14 09:08:34.285714288" , "dc-000025" , "Adebola" , "Orafidiya" , 62, "Psychiatry");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("5a0d4d31-4a51-43c9-b11f-28aee1a52042" , "2021-11-09 11:25:42.857142856" , "2021-11-09 11:25:42.857142856" , "dc-000026" , "Nazmul Hossain" , "Khan" , 64, "Urology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("44505333-c8f7-4415-a1f2-96baf3cf1c5d" , "2021-12-05 13:42:51.428571432" , "2021-12-05 13:42:51.428571432" , "dc-000027" , "Farzana" , "Nizami" , 66, "Pulmonary");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("49661727-3d0e-4368-bf56-e21e20c1011c" , "2021-12-31 16:00:00.000000000" , "2021-12-31 16:00:00.000000000" , "dc-000028" , "SABINA" , "AWWAL" , 68, "Adolescent Medicine");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("205a5dd3-5fa6-44ed-8d48-9c3e51e5e558" , "2022-01-26 18:17:08.571428576" , "2022-01-26 18:17:08.571428576" , "dc-000029" , "Himanshu" , "Patel" , 70, "Hematology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("677aaef6-e588-421f-b68b-74e89ead4c2d" , "2022-02-21 20:34:17.142857144" , "2022-02-21 20:34:17.142857144" , "dc-000030" , "Jigar" , "Patel" , 72, "Gastroenterology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("c12a5123-0e94-49b2-997f-c11d4de670c7" , "2022-03-19 22:51:25.714285720" , "2022-03-19 22:51:25.714285720" , "dc-000031" , "Francisco" , "Rosario" , 74, "Otolaryngology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("bc8285e4-f718-4748-8cc4-0168599104f2" , "2022-04-15 01:08:34.285714288" , "2022-04-15 01:08:34.285714288" , "dc-000032" , "Indira" , "Kairam" , 76, "Dermatology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("ce15abb3-8cdd-413c-bc62-9c94371936ef" , "2022-05-11 03:25:42.857142864" , "2022-05-11 03:25:42.857142864" , "dc-000033" , "Marlene" , "Saint-Hilaire" , 78, "Rheumatology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("4c3ccef2-cf8f-44e1-93fe-ad3e906a6c9b" , "2022-06-06 05:42:51.428571424" , "2022-06-06 05:42:51.428571424" , "dc-000034" , "Edline" , "Walters" , 80, "Neurology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("e279b0d5-6071-48fa-8394-c74577455e86" , "2022-07-02 08:00:00.000000000" , "2022-07-02 08:00:00.000000000" , "dc-000035" , "Gino" , "Zunino" , 82, "GI");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("e8e65a89-9b86-4650-86fa-b7824199957b" , "2022-07-28 10:17:08.571428576" , "2022-07-28 10:17:08.571428576" , "dc-000036" , "Elsa J." , "Reyes" , 84, "Physical Therapy");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("9f2af072-3492-4a75-b3db-66974cbe5d19" , "2022-08-23 12:34:17.142857152" , "2022-08-23 12:34:17.142857152" , "dc-000037" , "Jia" , "Hong" , 86, "Pathology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("944e0375-9532-45b2-a812-a5a4a718c048" , "2022-09-18 14:51:25.714285712" , "2022-09-18 14:51:25.714285712" , "dc-000038" , "Ala-May" , "Lumibao" , 88, "Nephrology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("83d7ba22-2d80-4574-b15d-1d810f21ae20" , "2022-10-14 17:08:34.285714288" , "2022-10-14 17:08:34.285714288" , "dc-000039" , "Florence" , "Golamco" , 90, "Dentistry");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("9b6465b2-037c-4fa0-9f81-8ad822e5a596" , "2022-11-09 19:25:42.857142864" , "2022-11-09 19:25:42.857142864" , "dc-000040" , "Most Jahan" , "Begum" , 92, "Psychology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("24131b35-8e5d-4bc6-942d-71bf5c7e95ad" , "2022-12-05 21:42:51.428571424" , "2022-12-05 21:42:51.428571424" , "dc-000041" , "Emil" , "Lavian" , 94, "Pediatric Cardiology");
+
+
+INSERT INTO doctors (id, created_at, updated_at, doctor_id, fname, lname, office_number, specialty) values ("4d100d8e-fe73-476c-bd14-f844b0f7a869" , "2023-01-01 00:00:00.000000000" , "2023-01-01 00:00:00.000000000" , "dc-000042" , "Paul" , "De Guzman" , 96, "Surgery");
