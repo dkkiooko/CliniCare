@@ -36,13 +36,13 @@
 			<form class="test">
 				<h2>Personal Data</h2>
 				<label for="name">First Name:</label>
-				<input type="text" id="fname" name="fname">
+				<input type="text" id="fname" name="fname" required>
 				<label for="name">Last Name:</label>
-				<input type="text" id="lname" name="lname">
+				<input type="text" id="lname" name="lname" required>
 				<label for="dob">Date of Birth:</label>
-				<input type="date" id="birthyear" name="birthyear">
+				<input type="date" id="birthyear" name="birthyear" required>
 				<label for="gender">Gender:</label>
-				<select id="sex" name="sex">
+				<select id="sex" name="sex" required>
 					<option value="">Select Gender</option>
 					<option value="M">Male</option>
 					<option value="F">Female</option>
@@ -51,37 +51,37 @@
 				<h2>Address</h2>
 
 				<label for="city">City:</label>
-				<input type="text" id="city" name="city">
+				<input type="text" id="city" name="city" required>
 				<label for="sub-city">Sub-city:</label>
-				<input type="text" id="subcity" name="subcity">
+				<input type="text" id="subcity" name="subcity" required>
 				<label for="county">County:</label>
-				<input type="text" id="county" name="county">
+				<input type="text" id="county" name="county" required>
 				<label for="location">Location:</label>
-				<input type="text" id="location" name="location">
+				<input type="text" id="location" name="location" required>
 				<label for="phone">Phone:</label>
-				<input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{10}">
+				<input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{12}" required>
 				<label for="email">Email:</label>
-				<input type="email" id="email" name="email">
+				<input type="email" id="email" name="email" required>
 				<label for="post_address">Post Address</label>
-				<input type="text" id="post_address" name="post_address">
+				<input type="text" id="post_address" name="post_address" required>
 
 				<h2>Insurance Detail</h2>
 
 				<label for="insurance-name">Insurance Company:</label>
-				<input type="text" id="insurance_company" name="insurance_company">
+				<input type="text" id="insurance_company" name="insurance_company" required>
 				<label for="policy-number">Insurance Number:</label>
-				<input type="text" id="insurance_number" name="insurance_number">
+				<input type="text" id="insurance_number" name="insurance_number" required>
 
 				<h2>Emergency Contact</h2>
 
 				<label for="name">First Name:</label>
-				<input type="text" id="emergency_fname" name="emergency_fname">
+				<input type="text" id="emergency_fname" name="emergency_fname" required>
 				<label for="name">Last Name:</label>
-				<input type="text" id="emergency_lname" name="emergency_lname">
+				<input type="text" id="emergency_lname" name="emergency_lname" required>
 				<label for="phone">Phone:</label>
-				<input type="tel" id="emergency_number" name="emergency_number" pattern="[0-9]{10}">
+				<input type="tel" id="emergency_number" name="emergency_number" pattern="[0-9]{12}" required>
 				<label for="email">Email:</label>
-				<input type="email" id="emergency_email" name="emergency_email">
+				<input type="email" id="emergency_email" name="emergency_email" required>
 			
 				<button type="button" id="create_patient">Create Patient</button>
 			</form>
