@@ -83,6 +83,15 @@ section h2 {
 	margin-top: 0;
 }
 
+section.register form {
+  min-height: 190px;
+  margin-bottom: 430px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
 .new h2 {
 	margin-top: 0;
 }
