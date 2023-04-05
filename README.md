@@ -65,7 +65,7 @@ run the api in a different window
 go to your browser got to this url in 192.168.0.32.500
 this will take you to the landing page which looks like this
 
-![Landing page](images/clinicare.jpg)
+<img src="/images/clinicare.png" alt="image of landing page" title="Landing page">
 
 
 
