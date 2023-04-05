@@ -4,7 +4,7 @@ The goal of CliniCare is to enable. A command interpreter is created in this seg
 
 ## CONTRIBUTING
 Daniel Kioko - kithekadankioko@gmail.com
-Bereket Tezera - bereketb20@hotmail.com
+Bereket Bayou - bereketb20@hotmail.com
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -24,7 +24,7 @@ This project is interpreted/tested on Ubuntu 20.04 LTS using python3 (version 3.
 
 ## Installation
 * Clone this repository: `git clone "https://github.com/dkkiooko/CliniCare.git"`
-* Access AirBnb directory: `cd AirBnB_clone`
+* Access CliniCare directory: `cd CliniCare`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
@@ -62,16 +62,11 @@ run the api in a different window
 ```
 ~CliniCare$ CLINICARE_MYSQL_USER=care_dev CLINICARE_MYSQL_PWD=clinic_dev_pwd CLINICARE_MYSQL_HOST=localhost CLINICARE_MYSQL_DB=clinicare_dev_db CLINICARE_TYPE_STORAGE=db python3 -m api.v1.app
 ```
-go to your browser got to this url in 192.168.0.32.500
+go to your browser got to this url in 192.168.0.32.500 or 54.146.93.137
 this will take you to the landing page which looks like this
 
 ## Licencing
 No licences required to use this app at the moment
-
-## Related projects
-IQ-Care, Care2000
-Smart care, PrimeCare
-
 
 <img src="/images/clinicare.png" alt="image of landing page" title="Landing page">
 
