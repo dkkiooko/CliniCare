@@ -254,7 +254,7 @@ $(document).ready(function () {
                   <label for="gu">Genitourinary</label>
                 </td>
                 <td>
-                  <output name="gu">${data.genitourinary}</output>
+                  <output name="gu">${data.gentourinary}</output>
                 </td>
               </tr>
               <tr>
