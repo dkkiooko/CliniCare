@@ -10,7 +10,6 @@ from models.visit import Visit
 from models.doctor import Doctor
 from models.patient import Patient
 
-counter = 0
 
 
 @app_views.route('/patients/', methods=['GET'], strict_slashes=False)
@@ -25,8 +24,8 @@ def create_patient():
     if not request.get_json():
         abort(400, description="Not a JSON")
 
-    global counter
-    counter += 1
+    
+    counter = storage.count(Patient)
     
     data = request.get_json()
 

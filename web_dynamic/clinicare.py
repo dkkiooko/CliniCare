@@ -10,8 +10,8 @@ from flask_mysqldb import MySQLdb, MySQL
 import bcrypt
 
 app = Flask(__name__)
-app.config['MYSQL_USER'] = 'bek'
-app.config['MYSQL_PASSWORD'] = '2518E11e&&'
+app.config['MYSQL_USER'] = 'dan'
+app.config['MYSQL_PASSWORD'] = 'abcd1234'
 app.config['MYSQL_DB'] = 'password_test'
 app.config['MYSQL_HOST'] = 'localhost'
 
@@ -54,7 +54,7 @@ def register():
             password = request.form['password'].encode('utf-8')
             hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO clients (username, password_hash) VALUES (%s, %s)", (username, hashed_password))
+            cur.execute("INSERT INTO clients (username, password) VALUES (%s, %s)", (username, hashed_password))
             mysql.connection.commit()
             cur.close()
             flash('Patient successfully registered with ID ' + username)
@@ -72,7 +72,7 @@ def doc_register():
         password = request.form['password'].encode('utf-8')
         hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (username, password_hash) VALUES (%s, %s)", (username, hashed_password))
+        cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_password))
         mysql.connection.commit()
         cur.close()
         flash('successful')
@@ -91,7 +91,7 @@ def login():
         user = cur.fetchone()
         cur.close()
         if user:
-            hashed_password = user[2].encode('utf-8')
+            hashed_password = user[1].encode('utf-8')
             if bcrypt.checkpw(password, hashed_password):
                 session['username'] = username
                 if username == 'reception':
@@ -117,7 +117,7 @@ def client_login():
         user = cur.fetchone()
         cur.close()
         if user:
-            hashed_password = user[2].encode('utf-8')
+            hashed_password = user[1].encode('utf-8')
             if bcrypt.checkpw(password, hashed_password):
                 session['username'] = username
                 return redirect(url_for('patient', patient_id=username))
