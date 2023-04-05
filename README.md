@@ -2,7 +2,7 @@
 The console is the first segment of CliniCare project. 
 The goal of CliniCare is to enable. A command interpreter is created in this segment to manage objects for the CliniCare website.
 
-## AUTHORS
+## CONTRIBUTING
 Daniel Kioko - kithekadankioko@gmail.com
 Bereket Tezera - bereketb20@hotmail.com
 
@@ -64,6 +64,14 @@ run the api in a different window
 ```
 go to your browser got to this url in 192.168.0.32.500
 this will take you to the landing page which looks like this
+
+## Licencing
+No licences required to use this app at the moment
+
+## Related projects
+IQ-Care, Care2000
+Smart care, PrimeCare
+
 
 <img src="/images/clinicare.png" alt="image of landing page" title="Landing page">
 
