@@ -62,8 +62,7 @@ run the api in a different window
 ```
 ~CliniCare$ CLINICARE_MYSQL_USER=care_dev CLINICARE_MYSQL_PWD=clinic_dev_pwd CLINICARE_MYSQL_HOST=localhost CLINICARE_MYSQL_DB=clinicare_dev_db CLINICARE_TYPE_STORAGE=db python3 -m api.v1.app
 ```
-go to your browser got to this url in 192.168.0.32.500 or 54.146.93.137
-this will take you to the landing page which looks like this
+
 
 ## Licencing
 No licences required to use this app at the moment
